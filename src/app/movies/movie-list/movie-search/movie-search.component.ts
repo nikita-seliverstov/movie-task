@@ -1,0 +1,24 @@
+import {Component,  Output, EventEmitter} from '@angular/core';
+import {MoviesService} from '../../movies.service';
+@Component({
+  selector: 'app-movie-search',
+  templateUrl: './movie-search.component.html',
+  styleUrls: ['./movie-search.component.css']
+})
+export class MovieSearchComponent  {
+    title: string;
+    year: string;
+    type: string;
+  @Output() searchEvent = new EventEmitter();
+  constructor(private moviesService: MoviesService) {
+    if (this.moviesService.getLastSearch()) {
+      const lastSearch = this.moviesService.getLastSearch();
+      this.title = lastSearch.title;
+      this.year = lastSearch.year;
+      this.type = lastSearch.type;
+    }
+  }
+   callSearchEvent() {
+    this.searchEvent.emit({title : this.title, year: this.year, type: this.type});
+ }
+}

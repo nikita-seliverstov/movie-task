@@ -1,0 +1,9 @@
+<input type="text" placeholder='Movie title' [(ngModel)]='title' />
+<input type="text" placeholder='Year' [(ngModel)]='year' />
+<select [(ngModel)] = 'type'>
+  <option>Movie</option>
+  <option>Series</option>
+  <option>Episode</option>
+</select>
+<button (click)='callSearchEvent()'></button>
+
