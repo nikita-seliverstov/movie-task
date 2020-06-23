@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import { MoviesComponent } from './movies/movies.component';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { MovieCardComponent } from './movies/movie-list/movie-card/movie-card.component';
 import { MovieSearchComponent } from './movies/movie-list/movie-search/movie-search.component';
@@ -13,7 +12,6 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent,
     MovieListComponent,
     MovieCardComponent,
     MovieSearchComponent,
@@ -23,7 +21,8 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

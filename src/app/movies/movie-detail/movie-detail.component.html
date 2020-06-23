@@ -1,1 +1,15 @@
-<h1 *ngIf="!movie.Title">movie not find</h1>
+<h1 *ngIf="!movie.Title">movie not found</h1>
+<div *ngIf="movie.Title" class="movie-detail">
+  <h2 class="mt-0">{{movie.Title}} ({{movie.Year}}) - {{movie.Type}}</h2>
+  <div class="media movie border-bottom-0">
+    <img class="mr-3 poster" src="{{movie.Poster}}" alt="Generic placeholder image">
+    <div class="media-body">
+      <div class="info">
+        Genre: {{movie.Genre}}, Runtime: {{movie.Runtime}}
+      </div>
+      <p>{{movie.Plot}}
+      <p>
+        Rating: {{movie.imdbRating}}
+    </div>
+  </div>
+</div>

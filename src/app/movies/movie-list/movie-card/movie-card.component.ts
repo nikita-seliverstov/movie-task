@@ -6,6 +6,6 @@ import {Movie} from '../../movie';
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss']
 })
-export class MovieCardComponent  {
+export class MovieCardComponent {
   @Input() movie: Movie;
 }

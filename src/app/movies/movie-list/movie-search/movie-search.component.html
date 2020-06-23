@@ -1,9 +1,21 @@
-<input type="text" placeholder='Movie title' [(ngModel)]='title' />
-<input type="text" placeholder='Year' [(ngModel)]='year' />
-<select [(ngModel)] = 'type'>
-  <option>Movie</option>
-  <option>Series</option>
-  <option>Episode</option>
-</select>
-<button (click)='callSearchEvent()'></button>
+<div class="form-row  mb-4">
+  <div class="col-3  offset-md-1 ">
+    <input class="form-control" type="text" placeholder="Movie title" [(ngModel)]="title"/>
+  </div>
+  <div class="col-3 ">
+    <input class="form-control" type="text" placeholder="Year" [(ngModel)]="year"/>
+  </div>
+  <div class="col-3">
+    <select class="form-control" [(ngModel)]="type">
+      <option selected>Movie</option>
+      <option>Series</option>
+      <option>Episode</option>
+    </select>
+  </div>
+  <div class="col">
+    <button class="btn btn-light" (click)="callSearchEvent()">Search</button>
+  </div>
+</div>
+
+
 
