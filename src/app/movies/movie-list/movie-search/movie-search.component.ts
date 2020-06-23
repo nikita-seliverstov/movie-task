@@ -16,9 +16,7 @@ export class MovieSearchComponent {
     this.type = 'Movie';
     if (this.moviesService.getLastSearch()) {
       const lastSearch = this.moviesService.getLastSearch();
-      this.title = lastSearch.title;
-      this.year = lastSearch.year;
-      this.type = lastSearch.type;
+      [this.title, this.year, this.type] = [lastSearch.title, lastSearch.year, lastSearch.type];
     }
   }
 
