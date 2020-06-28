@@ -8,7 +8,8 @@ import { MovieSearchComponent } from './movies/movie-list/movie-search/movie-sea
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
-
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +22,8 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    StoreModule.forRoot(reducers),
     AppRoutingModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
