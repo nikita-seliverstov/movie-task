@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
+import {AsyncPipe} from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,7 @@ import { reducers } from './store';
     StoreModule.forRoot(reducers),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

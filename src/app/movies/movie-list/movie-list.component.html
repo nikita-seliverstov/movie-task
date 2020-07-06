@@ -1,4 +1,3 @@
 <app-movie-search (searchEvent)="getMovies($event)"></app-movie-search>
-
 <app-movie-card *ngFor="let movie of (movies | async)" [movie]="movie">
 </app-movie-card>

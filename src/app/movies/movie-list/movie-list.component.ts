@@ -3,7 +3,9 @@ import {MoviesService} from '../movies.service';
 import {Movie} from '../movie';
 import { Store } from '@ngrx/store';
 import {selectMovieList} from '../../store/movie-list/movie-list.selectors';
-import { setListOfMovies } from '../../store/movie-list/movie-list.actions';
+import {selectSearchParams} from '../../store/movie-search/movie-search.selectors';
+import {SearchParams} from '../searchParams';
+import {AsyncPipe} from '@angular/common';
 import {Observable} from 'rxjs';
 @Component({
   selector: 'app-movie-list',
@@ -12,17 +14,16 @@ import {Observable} from 'rxjs';
 })
 export class MovieListComponent implements OnInit {
   movies: Observable<Movie[]>;
-  constructor(private moviesService: MoviesService, private store: Store) {
+  searchParams: SearchParams;
+  constructor(private moviesService: MoviesService, private store: Store, asyncPipe: AsyncPipe) {
     this.movies = store.select(selectMovieList);
+    this.searchParams =  asyncPipe.transform(store.select(selectSearchParams));
   }
   ngOnInit(): void {
-    this.getMovies(this.moviesService.getLastSearch());
+    this.getMovies(this.searchParams);
   }
 
   getMovies(search?): void {
-    if (search) {
-      this.moviesService.setLastSearch(search);
-    }
     this.moviesService.getMovies(search);
   }
 }
